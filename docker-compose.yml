@@ -1,0 +1,10 @@
+services:
+  kokoro-tts:
+    build: .
+    container_name: kokoro-tts
+    restart: unless-stopped
+    runtime: nvidia
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./models:/app/models

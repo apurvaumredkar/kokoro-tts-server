@@ -1,0 +1,12 @@
+--extra-index-url https://pypi.jetson-ai-lab.io/jp6/cu126
+fastapi
+uvicorn
+soundfile
+onnxruntime-gpu==1.24.0
+espeakng-loader
+phonemizer
+numpy
+
+# kokoro-onnx itself is installed separately with --no-deps (see Dockerfile):
+# it unconditionally depends on plain onnxruntime (CPU-only), which would
+# overwrite onnxruntime-gpu's files. Its real deps are the three above.
